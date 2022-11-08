@@ -1,8 +1,5 @@
 package team.caltech.olmago.common.message;
 
-import lombok.Builder;
-import lombok.Getter;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -51,7 +48,6 @@ public class MessageEnvelope {
   @Column(name = "payload", length = 2048, nullable = false)
   private String payload;
   
-  @Builder
   public static MessageEnvelope wrapEvent(String aggregateType,
                                           String aggregateId,
                                           String bindingName,
@@ -70,7 +66,6 @@ public class MessageEnvelope {
     return dee;
   }
   
-  @Builder
   public static MessageEnvelope wrapCommand(String bindingName,
                                             String eventType,
                                             String payload) {
