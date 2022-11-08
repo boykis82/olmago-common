@@ -1,9 +1,12 @@
 package team.caltech.olmago.common.message;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Getter
 @Entity
 @Table(name = "msg_envelope", indexes = @Index(name = "message_envelope_n1", columnList = "published,id"))
 public class MessageEnvelope {
